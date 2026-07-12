@@ -50,12 +50,13 @@ function createTaskElement(taskText, isCompleted = false) {
 // Add a new task from the input field
 function addTask() {
     const taskText = taskInput.value.trim();
-    if (taskText !== '') {
-        createTaskElement(taskText);
-        filterTasks();
-        saveTasks();
-        taskInput.value = '';
-    }
+    
+    // BUG INTRODUCED: Intentionally removed the check for empty tasks (and duplicate tasks)
+    // for your bug-fixing practice exercise.
+    createTaskElement(taskText);
+    filterTasks();
+    saveTasks();
+    taskInput.value = '';
 }
 
 // Load tasks from localStorage
