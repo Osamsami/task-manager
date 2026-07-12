@@ -69,4 +69,12 @@ h1 {
     padding: 12px;
     border-radius: 4px;
     border: 1px solid #ddd;
+    cursor: pointer;
+}
+
+/* Styling for completed tasks */
+#taskList li.completed {
+    text-decoration: line-through;
+    color: #999;
+    background: #eaeaea;
 }
