@@ -32,3 +32,4 @@ A simple, vanilla HTML/CSS/JavaScript to-do list app.
 7. Refresh the page to ensure your tasks are saved locally.
 
 ## Author
+ by Osam Sami
