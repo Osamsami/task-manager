@@ -1,3 +1,9 @@
+:root {
+    --bg-color: #f4f4f9;
+    --text-color: #333;
+    --container-bg: #fff;
+}
+
 /* Basic reset */
 * {
     box-sizing: border-box;
@@ -7,8 +13,8 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     display: flex;
     justify-content: center;
     padding-top: 50px;
@@ -16,12 +22,24 @@ body {
 
 /* Main container */
 .container {
-    background: #fff;
+    background: var(--container-bg);
     padding: 20px 30px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 400px;
+    position: relative;
+}
+
+/* Theme toggle button */
+#themeToggle {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
 }
 
 h1 {
