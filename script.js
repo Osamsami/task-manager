@@ -50,9 +50,21 @@ function createTaskElement(taskText, isCompleted = false) {
 // Add a new task from the input field
 function addTask() {
     const taskText = taskInput.value.trim();
-    
-    // BUG INTRODUCED: Intentionally removed the check for empty tasks (and duplicate tasks)
-    // for your bug-fixing practice exercise.
+
+    // Prevent empty tasks
+    if (taskText === '') {
+        return;
+    }
+
+    // Check for duplicates (case-insensitive)
+    const existingTasks = Array.from(taskList.querySelectorAll('li span'));
+    const isDuplicate = existingTasks.some(span => span.textContent.toLowerCase() === taskText.toLowerCase());
+
+    if (isDuplicate) {
+        alert('This task already exists!');
+        return;
+    }
+
     createTaskElement(taskText);
     filterTasks();
     saveTasks();
