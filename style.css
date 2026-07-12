@@ -70,6 +70,9 @@ h1 {
     border-radius: 4px;
     border: 1px solid #ddd;
     cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 /* Styling for completed tasks */
@@ -77,4 +80,19 @@ h1 {
     text-decoration: line-through;
     color: #999;
     background: #eaeaea;
+}
+
+/* Delete button styling */
+.delete-btn {
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 4px 8px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.delete-btn:hover {
+    background: #cc0000;
 }

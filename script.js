@@ -11,7 +11,24 @@ function addTask() {
     if (taskText !== '') {
         // Create a new list item
         const li = document.createElement('li');
-        li.textContent = taskText;
+
+        // Create span for task text
+        const span = document.createElement('span');
+        span.textContent = taskText;
+        li.appendChild(span);
+
+        // Create delete button
+        const deleteBtn = document.createElement('button');
+        deleteBtn.textContent = 'Delete';
+        deleteBtn.classList.add('delete-btn');
+
+        // Delete task when button is clicked
+        deleteBtn.addEventListener('click', function (event) {
+            event.stopPropagation(); // Prevent triggering 'completed' toggle
+            li.remove();
+        });
+
+        li.appendChild(deleteBtn);
 
         // Toggle 'completed' status when clicked
         li.addEventListener('click', function () {
