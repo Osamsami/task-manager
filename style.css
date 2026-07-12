@@ -4,6 +4,12 @@
     --container-bg: #fff;
 }
 
+body.dark-theme {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --container-bg: #1e1e1e;
+}
+
 /* Basic reset */
 * {
     box-sizing: border-box;
