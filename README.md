@@ -30,3 +30,6 @@ A simple, vanilla HTML/CSS/JavaScript to-do list app.
 5. Click the delete button next to a task to remove it.
 6. Use the filter buttons to toggle between All, Active, and Completed tasks.
 7. Refresh the page to ensure your tasks are saved locally.
+
+## Author
+ by Osam Sami
