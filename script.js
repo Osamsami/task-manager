@@ -2,6 +2,7 @@
 const taskInput = document.getElementById('taskInput');
 const addButton = document.getElementById('addButton');
 const taskList = document.getElementById('taskList');
+const themeToggleBtn = document.getElementById('themeToggle');
 
 // Save tasks to localStorage
 function saveTasks() {
@@ -117,6 +118,16 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
         // Apply the filter
         filterTasks();
     });
+});
+
+// Theme toggle functionality
+themeToggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('dark-theme');
+    if (document.body.classList.contains('dark-theme')) {
+        themeToggleBtn.textContent = '☀️';
+    } else {
+        themeToggleBtn.textContent = '🌙';
+    }
 });
 
 // Load tasks on initial page load
