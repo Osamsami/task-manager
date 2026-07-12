@@ -100,6 +100,11 @@ h1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transition: box-shadow 0.2s ease;
+}
+
+#taskList li:hover {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* Styling for completed tasks */
@@ -122,4 +127,12 @@ h1 {
 
 .delete-btn:hover {
     background: #cc0000;
+}
+
+/* Footer styling */
+.footer {
+    text-align: center;
+    font-size: 12px;
+    color: #999;
+    margin-top: 20px;
 }
