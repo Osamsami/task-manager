@@ -13,6 +13,11 @@ function addTask() {
         const li = document.createElement('li');
         li.textContent = taskText;
 
+        // Toggle 'completed' status when clicked
+        li.addEventListener('click', function () {
+            li.classList.toggle('completed');
+        });
+
         // Append the new item to the task list
         taskList.appendChild(li);
 
