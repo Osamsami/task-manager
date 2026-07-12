@@ -33,10 +33,12 @@ function addTask() {
         // Toggle 'completed' status when clicked
         li.addEventListener('click', function () {
             li.classList.toggle('completed');
+            filterTasks(); // Re-apply filter when state changes
         });
 
         // Append the new item to the task list
         taskList.appendChild(li);
+        filterTasks(); // Apply filter to newly added item
 
         // Clear the input field
         taskInput.value = '';
@@ -51,4 +53,35 @@ taskInput.addEventListener('keypress', function (event) {
     if (event.key === 'Enter') {
         addTask();
     }
+});
+
+// Function to filter tasks based on active filter button
+function filterTasks() {
+    const activeFilter = document.querySelector('.filter-btn.active').dataset.filter;
+    const tasks = taskList.querySelectorAll('li');
+
+    tasks.forEach(task => {
+        const isCompleted = task.classList.contains('completed');
+        if (activeFilter === 'all') {
+            task.style.display = 'flex';
+        } else if (activeFilter === 'active' && !isCompleted) {
+            task.style.display = 'flex';
+        } else if (activeFilter === 'completed' && isCompleted) {
+            task.style.display = 'flex';
+        } else {
+            task.style.display = 'none';
+        }
+    });
+}
+
+// Add event listeners to filter buttons
+document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', function () {
+        // Remove active class from all buttons
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        // Add active class to clicked button
+        btn.classList.add('active');
+        // Apply the filter
+        filterTasks();
+    });
 });
